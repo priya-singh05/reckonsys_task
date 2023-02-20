@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title>Dynamic School Report Card</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#show').click(function () {
+                $('.menu').toggle("slide");
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        function generateReport() {
+            var schoolName = document.getElementById("schoolName").value;
+            var studentName = document.getElementById("studentName").value;
+            var maths = parseInt(document.getElementById("maths").value);
+            var english = parseInt(document.getElementById("english").value);
+            var science = parseInt(document.getElementById("science").value);
+            var social = parseInt(document.getElementById("social").value);
+            var hindi = parseInt(document.getElementById("hindi").value);
+            var totalMarks = maths + english + science + social + hindi;
+            var percentage = (totalMarks / 500) * 100;
+            var grade;
+            if (maths < 0 || maths > 100 || isNaN(maths) ||
+                english < 0 || english > 100 || isNaN(english) ||
+                science < 0 || science > 100 || isNaN(science) ||
+                social < 0 || social > 100 || isNaN(social) ||
+                hindi < 0 || hindi > 100 || isNaN(hindi)
+
+            ) {
+                var reportCard = document.getElementById("reportCard");
+                reportCard.innerHTML = "<h1>Invalid input. Marks should be between 0 and 100.</h1>"
+                console.log("Invalid input. Marks should be between 0 and 100.");
+
+            } else {
+                // Calculate the total and percentage
+                let totalMarks = maths + english + science + social + hindi;
+                let percentage = (totalMarks / 500) * 100;
+
+                // Determine the grade
+                let grade;
+                if (percentage >= 90) {
+                    grade = "A+";
+                } else if (percentage >= 80) {
+                    grade = "A";
+                } else if (percentage >= 70) {
+                    grade = "B+";
+                } else if (percentage >= 60) {
+                    grade = "B";
+                } else if (percentage >= 50) {
+                    grade = "C";
+                } else if (percentage >= 40) {
+                    grade = "D";
+                } else {
+                    grade = "F";
+                }
+
+                // Determine individual grades
+
+                let englishGrade;
+                if (english >= 90) {
+                    englishGrade = "A+";
+                } else if (english >= 80) {
+                    englishGrade = "A";
+                } else if (english >= 70) {
+                    englishGrade = "B+";
+                } else if (english >= 60) {
+                    englishGrade = "B";
+                } else if (english >= 50) {
+                    englishGrade = "C";
+                } else if (english >= 40) {
+                    englishGrade = "D";
+                } else {
+                    englishGrade = "F";
+                }
+
+                let mathsGrade;
+                if (maths >= 90) {
+                    mathsGrade = "A+";
+                } else if (maths >= 80) {
+                    mathsGrade = "A";
+                } else if (maths >= 70) {
+                    mathsGrade = "B+";
+                } else if (maths >= 60) {
+                    mathsGrade = "B";
+                } else if (maths >= 50) {
+                    mathsGrade = "C";
+                } else if (maths >= 40) {
+                    mathsGrade = "D";
+                } else {
+                    mathsGrade = "F";
+                }
+
+                let scienceGrade;
+                if (science >= 90) {
+                    scienceGrade = "A+";
+                } else if (science >= 80) {
+                    scienceGrade = "A";
+                } else if (science >= 70) {
+                    scienceGrade = "B+";
+                } else if (science >= 60) {
+                    scienceGrade = "B";
+                } else if (science >= 50) {
+                    scienceGrade = "C";
+                } else if (science >= 40) {
+                    scienceGrade = "D";
+                } else {
+                    scienceGrade = "F";
+                }
+
+                let socialGrade;
+                if (social >= 90) {
+                    socialGrade = "A+";
+                } else if (social >= 80) {
+                    socialGrade = "A";
+                } else if (social >= 70) {
+                    socialGrade = "B+";
+                } else if (social >= 60) {
+                    socialGrade = "B";
+                } else if (social >= 50) {
+                    socialGrade = "C";
+                } else if (social >= 40) {
+                    socialGrade = "D";
+                } else {
+                    socialGrade = "F";
+                }
+
+                let hindiGrade;
+                if (hindi >= 90) {
+                    hindiGrade = "A+";
+                } else if (hindi >= 80) {
+                    hindiGrade = "A";
+                } else if (hindi >= 70) {
+                    hindiGrade = "B+";
+                } else if (hindi >= 60) {
+                    hindiGrade = "B";
+                } else if (hindi >= 50) {
+                    hindiGrade = "C";
+                } else if (hindi >= 40) {
+                    hindiGrade = "D";
+                } else {
+                    hindiGrade = "F";
+                }
+
+
+                var reportCard = document.getElementById("reportCard");
+                reportCard.innerHTML = "<h1>" + schoolName + "</h1>" +
+                    "<h2>Report Card</h2>" +
+                    "<h3>" + studentName + "</h3>" +
+                    "<table>" +
+                    "<tr><th>Subject</th><th>Grade</th><th>Marks Obtained</th></tr>" +
+                    "<tr><td>Maths</td><td>" + mathsGrade + "</td><td>" + maths + "</td></tr>" +
+                    "<tr><td>English</td><td>" + englishGrade + "</td><td>" + english + "</td></tr>" +
+                    "<tr><td>Science</td><td>" + scienceGrade + "</td><td>" + science + "</td></tr>" +
+                    "<tr><td>Social</td><td>" + socialGrade + "</td><td>" + social + "</td></tr>" +
+                    "<tr><td>Hindi</td><td>" + hindiGrade + "</td><td>" + hindi + "</td></tr></table>" +
+                    "<table>" + "<tr><th>Total Marks</th><th>Grade</th><th>Percentage</th>" + "<tr><td>" + totalMarks + "</td><td>" + grade + "</td><td>" + percentage + "</td></tr>" + "</table>";
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dynamic School Report Card</h1><br><br>
+        <div class="inputLable">
+            <label for="schoolName">School Name:</label>
+            <input type="text" id="schoolName" name="schoolName"><br><br>
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName"><br><br>
+            <label for="maths">Maths:</label>
+            <input type="number" id="maths" name="maths" min="0" max="100"><br><br>
+            <label for="english">English:</label>
+            <input type="number" id="english" name="english" min="0" max="100"><br><br>
+            <label for="science">Science:</label>
+            <input type="number" id="science" name="science" min="0" max="100"><br><br>
+            <label for="social">Social:</label>
+            <input type="number" id="social" name="social" min="0" max="100"><br><br>
+            <label for="hindi">Hindi:</label>
+            <input type="number" id="hindi" name="hindi" min="0" max="100"><br><br>
+        </div>
+
+        <div id="show" style="display: inline-block;"><button onclick="generateReport()">
+                Generate Report Card</button>
+        </div>
+        <div id="reportCard" class="menu" style="display: none;"></div>
+
+    </div>
+
+
+
+</body>
+
+</html>

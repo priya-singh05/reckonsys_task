@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>REGN-FORM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+    </head>
+    <body>
+        <style>
+            form {
+              width: 50%;
+              margin: 0 auto;
+              padding: 30px;
+              background-color: #f2f2f2;
+              border-radius: 10px;
+              box-shadow: 2px 2px 5px #ccc;
+            }
+            h1{
+                text-align: center;
+              
+            }
+            .name{
+              text-align: center;
+              
+            }
+
+            label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+          }
+
+        
+        
+          input[type="text"] {
+            width: 97%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+          
+          textarea {
+            width: 97%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+        
+          input[type="submit"] {
+            width: 97%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            background-color: #32527b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        
+          input[type="submit"]:hover {
+            background-color: #3f679a;
+          }
+        
+          #age {
+            width: 97%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        </style>
+        
+        <form>
+          <h1>Registration for WEB DEV BOOTCAMP at <span class="name"> RECKONSYS</span> </h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          
+            <label for="college">College:</label>
+            <input type="text" id="college" name="college" required>
+          
+            <label for="department">Department:</label>
+            <select id="department" name="department" onchange="myFunction()" required>
+            
+              <option value="">Select one</option>
+              <option value="CSE">CSE</option>
+              <option value="ETC">ETC</option>
+              <option value="ECE">ECE</option>
+              <option value="ISE">ISE</option>
+              <option value="EEE">EEE</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="Mech">Mech</option>
+              <option value="others">Others</option>
+              
+            </select>
+            
+            <input
+        style="display: none"
+        type="text"
+        name=""
+        id="others-text"
+        placeholder="User Input"
+      />
+            
+            
+          
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="100" required>
+          
+            <label for="technical_skills">Technical Skills:</label>
+            <select id="technical_skills" name="technical_skills" onchange="myFunction()" required>
+              <option value="">Select one</option>
+              <option value="Java">Java</option>
+              <option value="Python">Python</option>
+              <option value="C++">C++</option>
+              <option value="C#">C#</option>
+              <option value="others">Others</option>
+            </select>
+            <input style="display: none" type="text" name="" id="others-t" placeholder="User Input">
+            
+            <label for="remarks">Why do you want to join Reckonsys?</label>
+            <textarea id="remarks" name="remarks"></textarea>
+            
+          
+            <label for="remarks">How did you hear about us?</label>
+            <textarea id="remarks" name="remarks"></textarea>
+
+            <label for="remarks">Your Feedback?</label>
+            <textarea id="remarks" name="remarks"></textarea>
+            
+
+          
+            <input type="submit" value="Submit">
+          </form>
+        
+          <script>
+            function myFunction() {
+            var x = document.getElementById("department").value;
+            var y = document.getElementById("technical_skills").value;
+            var input = document.getElementById("others-text");
+            var input2 = document.getElementById("others-t");
+            if (x === "others") {
+              input.style.display = "block";
+            } else {
+              input.style.display = "none";
+            }
+            if (y === "others") {
+              input2.style.display = "block";
+            } else {
+              input2.style.display = "none";
+            }
+          }
+          </script>
+          
+      
+    </body>
+</html>
+
+
+  

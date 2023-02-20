@@ -1,0 +1,90 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  }
+  
+  header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+  }
+  
+  .parallax-1 {
+	background-image: url(/parallax/images/bg2.png);
+	background-attachment: fixed;
+	background-position: center;
+	/* background-repeat: no-repeat; */
+	background-size: cover;
+	height: 500px;
+  }
+  
+  .parallax-2 {
+	background-image: url(/parallax/images/bg3.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+  }
+  
+  .parallax-3 {
+	background-image: url(/parallax/images/bg2.png);
+	background-attachment: fixed;
+	background-position: center;
+	/* background-repeat: no-repeat; */
+	background-size: cover;
+	height: 500px;
+  }
+  
+  .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+  }
+  
+  .gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 50px;
+  }
+  
+  .gallery img {
+	margin: 10px;
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 5px solid #fff;
+  }
+
+  
+  h2 {
+	font-size: 3em;
+	margin-bottom: 50px;
+  }
+  
+  p {
+	font-size: 1.5em;
+	line-height: 1.5;
+  }
+  
+  @media screen and (max-width: 768px) {
+	h2 {
+	  font-size: 2em;
+	  margin-bottom: 30px;
+	}
+  
+	p {
+	  font-size: 1.2em;
+	  line-height: 1.2;
+	}
+  
+	.gallery img {
+	  width: 150px;
+	  height: 150px;
+	  margin: 5px;
+	}
+  }

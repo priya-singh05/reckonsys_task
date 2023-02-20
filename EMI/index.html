@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EMI Calculator</title>
+    <style>
+      
+      .container {
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      input[type="text"],
+      select {
+        padding: 10px;
+        font-size: 18px;
+        margin-top: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #32527b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .output {
+        margin-top: 20px;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>EMI Calculator</h1>
+      <form>
+        <label>Loan Amount:</label>
+        <input type="text" id="loanAmount" placeholder="Enter Loan Amount" required>
+        <br>
+        <label>Interest Rate:</label>
+        <input type="text" id="interestRate" placeholder="Enter Interest Rate" required>
+        <br>
+        <label>Loan Tenure (in months):</label>
+        <input type="text" id="loanTenure" placeholder="Enter Loan Tenure" required>
+        <br>
+        <input type="submit" value="Calculate EMI">
+      </form>
+      <div class="output">
+       
+      </div>
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+ 
+  var loanAmount = document.querySelector("#loanAmount").value;
+  var interestRate = document.querySelector("#interestRate").value;
+  var loanTenure = document.querySelector("#loanTenure").value;
+
+ 
+  var interest = (loanAmount * (interestRate * 0.01)) / loanTenure;
+  var emi = ((loanAmount / loanTenure) + interest);
+
+ 
+  emi = emi.toFixed(2);
+
+
+  document.querySelector(".output").innerHTML = "Your EMI is: Rs " + emi;
+});
+
+    </script>
+  </body>
+</html>

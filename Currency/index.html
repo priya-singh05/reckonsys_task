@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        background: rgb(50,82,123);
+    background: radial-gradient(circle, rgba(50,82,123,1) 2%, rgba(63,103,154,1) 25%, rgba(255,255,255,1) 91%);
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, .15);  
+ backdrop-filter: blur(5px);
+   
+      }
+
+      .converter-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 50px;
+      }
+
+      .converter-form label {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      .converter-form input[type="number"] {
+        width: 96%;
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .converter-form select {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .converter-form input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #32527b;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Currency Converter</h2>
+      <form class="converter-form">
+        <label for="amount">Enter amount:</label>
+        <input type="number" id="amount" value="1">
+
+        <label for="from-currency">From currency:</label>
+        <select id="from-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="INR">INR</option>
+        </select>
+
+        <label for="to-currency">To currency:</label>
+        <select id="to-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="INR">INR</option>
+        </select>
+
+        <input type="button" value="Convert" onclick="convertCurrency()">
+      </form>
+      <p id="result"></p>
+    </div>
+
+
+          <script>
+            function convertCurrency() {
+              const amount = document.querySelector("#amount").value;
+              const fromCurrency = document.querySelector("#from-currency").value;
+              const toCurrency = document.querySelector("#to-currency").value;
+          
+              let convertedAmount;
+              if (fromCurrency === "USD" && toCurrency === "EUR") {
+                convertedAmount = amount * 0.84;
+              } else if (fromCurrency === "USD" && toCurrency === "GBP") {
+                convertedAmount = amount * 0.76;
+              } else if (fromCurrency === "USD" && toCurrency === "INR") {
+                convertedAmount = amount * 82.50;
+              } else if (fromCurrency === "EUR" && toCurrency === "USD") {
+                convertedAmount = amount * 1.19;
+              } else if (fromCurrency === "EUR" && toCurrency === "GBP") {
+                convertedAmount = amount * 0.91;
+              } else if (fromCurrency === "EUR" && toCurrency === "INR") {
+                convertedAmount = amount * 87.47;
+              } else if (fromCurrency === "GBP" && toCurrency === "USD") {
+                convertedAmount = amount * 1.32;
+              } else if (fromCurrency === "GBP" && toCurrency === "EUR") {
+                convertedAmount = amount * 1.10;
+              } else if (fromCurrency === "GBP" && toCurrency === "INR") {
+                convertedAmount = amount * 100.74;
+              } else if (fromCurrency === "INR" && toCurrency === "USD") {
+                convertedAmount = amount * 0.012;
+              } else if (fromCurrency === "INR" && toCurrency === "EUR") {
+                convertedAmount = amount * 0.011;
+              } else if (fromCurrency === "INR" && toCurrency === "GBP") {
+                convertedAmount = amount * 0.01;
+              }
+          
+              document.querySelector("#result").innerHTML =
+                amount + " " + fromCurrency + " = " + convertedAmount.toFixed(2) + " " + toCurrency;
+            }
+          </script>
+          
+
+    </body>
+    </html>

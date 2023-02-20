@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>CALCULATOR</title>
+    <style>
+      body{
+        background: rgb(50,82,123);
+        background: radial-gradient(circle, rgba(50,82,123,1) 2%, rgba(63,103,154,1) 25%, rgba(255,255,255,1) 91%);
+      }
+      .container {
+        width: 400px;
+        height: 500px;
+        margin: 50px auto;
+        border: 1px solid black;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, .15);  
+ backdrop-filter: blur(5px);
+   
+
+      }
+      
+      .display {
+        width: 95%;
+        height: 100px;
+        background-color: lightgray;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 2em;
+        margin: 10px;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 5px;
+        margin: 10px;
+      }
+
+      .button {
+        width: 100%;
+        height: 70px;
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        
+      }
+     
+
+      .button:hover {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display" id="display">
+      </div>
+
+     
+      <div class="buttons">
+        <div class="button" id="seven" onclick="displayValue('7')">7</div>
+        <div class="button" id="eight" onclick="displayValue('8')">8</div>
+        <div class="button" id="nine" onclick="displayValue('9')">9</div>
+        <div class="button" id="divide" onclick="displayValue('/')">/</div>
+        <div class="button" id="four" onclick="displayValue('4')">4</div>
+        <div class="button" id="five" onclick="displayValue('5')">5</div>
+        <div class="button" id="six" onclick="displayValue('6')">6</div>
+        <div class="button" id="multiply" onclick="displayValue('*')">*</div>
+        <div class="button" id="one" onclick="displayValue('1')">1</div>
+        <div class="button" id="two" onclick="displayValue('2')">2</div>
+        <div class="button" id="three" onclick="displayValue('3')">3</div>
+        <div class="button" id="subtract" onclick="displayValue('-')">-</div>
+       
+        <div class="button" id="zero" onclick="displayValue('0')">0</div>
+        <div class="button" id="decimal" onclick="displayValue('.')">.</div>
+        <div class="button" id="add" onclick="displayValue('+')">+</div>
+        <div class="button" id="equals" onclick="calculate()">=</div>
+        <div class="button" id="open-bracket" onclick="calculate()" >(</div>
+      <div class="button" id="close-bracket" onclick="calculate()" >)</div>
+      <div class="button" id="clear" onclick="clearDisplay()">C</div>
+      <div class="button" id="mod" onclick="displayValue('%')">%</div>
+        
+      </div>
+    </div>
+  </body>
+  <script>
+    function displayValue(value) {
+      document.querySelector("#display").innerHTML += value;
+    }
+
+    function clearDisplay() {
+      document.querySelector("#display").innerHTML = "";
+    }
+
+    function calculate() {
+      let expression = document.querySelector("#display").innerHTML;
+      let answer = eval(expression);
+      document.querySelector("#display").innerHTML = answer;
+    }
+
+//     let display = document.getElementById("display");
+//   let percentage = document.getElementById("percentage");
+
+//   percentage.addEventListener("click", function() {
+//     let value = parseFloat(display.value);
+//     display.value = value / 100;
+//   });
+  </script>
+</html>
+
