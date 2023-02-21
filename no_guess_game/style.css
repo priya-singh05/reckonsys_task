@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+    background: rgb(50,82,123);
+    background: radial-gradient(circle, rgba(50,82,123,1) 2%, rgba(63,103,154,1) 25%, rgba(255,255,255,1) 91%);
+}
+
+p{
+    font-size: 20px;
+}
+
+.form{
+    padding-top: 20px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#guess{
+   
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#submitGuess{
+    background-color: #32527b;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+.button {
+    background-color: #32527b;
+    color: #fff;
+    font-size: 20px;
+   
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
